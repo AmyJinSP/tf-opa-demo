@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 
+  AWS Config
+
+Resources:
+
+  ConfigRuleForRDS: 
+    Type: AWS::Config::ConfigRule
+    Properties: 
+      Scope: 
+        ComplianceResourceTypes: 
+          - "AWS::RDS::DBCLUSTER"
+      Source: 
+        Owner: AWS
+        SourceIdentifier: "RDS_CLUSTER_DELETION_PROTECTION_ENABLED"
